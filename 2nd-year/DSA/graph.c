@@ -3,18 +3,22 @@
 
 int adj[20][20],visited[20],a[20],front=0,rear=0,top=0,n,i,flag1=0,flag2=0;
 
-void BFS(int v){
+void BFS(int v) {
     int curr;
-    visited[v]=1;
-    a[rear++]=v;
-    while(front!=rear){
-        curr=a[front++];
-        for(i=1;i<=n;i++){
-            if(adj[curr][i]==1 && visited[i]==0){
-                flag1=1;
-                a[++rear]=1;
-                visited[i]=1;
-                printf("\n%d->%d",curr,i);
+    visited[v] = 1;
+    a[rear++] = v;
+    while (front != rear) {
+        // Check if queue is empty
+        // if (front == rear) {
+        //     return;
+        // }
+        curr = a[front++];
+        for (i = 1; i <= n; i++) {
+            if (adj[curr][i] == 1 && visited[i] == 0) {
+                flag1 = 1;
+                a[++rear] = i;
+                visited[i] = 1;
+                printf("\n%d->%d", curr, i);
             }
         }
     }

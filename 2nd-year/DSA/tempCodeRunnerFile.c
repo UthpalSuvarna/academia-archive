@@ -1,0 +1,3 @@
+if (front == rear) {
+        //     return;
+        // }
