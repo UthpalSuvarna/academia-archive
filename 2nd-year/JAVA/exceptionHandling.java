@@ -19,8 +19,7 @@ public class exceptionHandling {
 
     static void procC() {
         try {
-            System.out.println("Inside procB");
-            return;
+            System.out.println("Inside procC");
         } finally {
             System.out.println("procB's finally");
         }
@@ -28,10 +27,12 @@ public class exceptionHandling {
 
     public static void main(String[] args) {
         try {
-            procC();
+            procA();
         } catch (Exception e) {
             System.out.println("Exception caught" + e);
         }
+        procB();
+        procC();
     }
 
 }
